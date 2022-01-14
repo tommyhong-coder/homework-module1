@@ -191,3 +191,9 @@
             width: 25px;
         }
         /*cliffs page */
+        #cliffs header {
+            background: no-repeat lightgrey url(images/forest_cliff.jpg);
+            background-size: 1700px;
+            width: 100%;
+            min-height:400px;
+            padding-top:3em;
