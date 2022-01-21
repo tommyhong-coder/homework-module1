@@ -50,6 +50,12 @@
             color: #fff;
         }
         /* Main */
+        main h1 {
+            color: greenyellow;
+        }
+        section #clock {
+            color: red;
+        }
         /* Partners */
         section {
             width: 100%;
@@ -59,7 +65,7 @@
             width: 1200px;
             padding: 2em 0 2em 0;
             margin: 0 auto;
-            text-align: center;
+            text-align: left;
         }
         section #partners .partner {
             display: inline-block;
@@ -79,10 +85,10 @@
             padding-bottom: lem;
             background-color: #ecfab8;
         }
-        footer #nondisclaimer p {
+        footer #nondisclaimer {
             display:inline;
         }
-        footer #nondiclaimer .copy {
+        footer #nondisclaimer .copy {
             padding: 3.5em 3.5em 3.5em 13em;
             float: left;
             font-size: 0.9em;

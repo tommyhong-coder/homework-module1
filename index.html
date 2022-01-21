@@ -33,14 +33,14 @@
         <span id="clock"></span>
     </section>
             <main>
-                <h2>Introducing California's Greatest Cliffs</h2>
-                <h3>What is so unique about California cliffs?</h3>
+                <h1>Introducing California's Greatest Cliffs</h1>
+                <h2>What is so unique about California cliffs?</h2>
                 <p>California cliffs are one of a kind in the United States where no cliffs are as magnificent and beautiful as them. And California is the only state that have cliffs that fronts all possible environments: sea, river, mountains and canyons. There are four such individual unique cliffs: West Cliff, North Cliff, East Cliff and South Cliff. All offer fantastic overlooking views, recreational areas, camping sites, wildlife watch spots and overnight cabins.</p>
                 <h3>Where are these cliffs?</h3>
                 <p>Located within a 100 mile radius from Irvine, California, they can be reached by roads easily. The closest cliff to Irvine is West Cliff, which is the most popular and most visited.</p>
                 <section>
                     <ul id="partners">
-                        <!-- <li class="partner">
+                         <li class="partner">
                             <img src="images/partners/partner-bustour.png" alt="Partner Bus Tours">
                         </li>
                         <li class="partner">
@@ -57,7 +57,7 @@
                         </li>
                         <li class="partner">
                             <img src="images/partners/partner-tourgroup.png" alt="Partner Tour Group">
-                        </li> -->
+                        </li>
                     </ul>
                 </section>
             </main>
@@ -99,36 +99,15 @@
         //Determine AM or PM string
         if (hr == 12) {
             ampm = "PM"; //Set to PM
-        } Else if (hr > 12) {
+        } else if (hr > 12) {
             hr -= 12; //Deduct 12 from hours greater than 12 (military time)
             ampm = "PM"; //Set to PM
         } else {
             ampm = "AM"; //Set to AM
-        }
-        //Determine timezone
-        if (utc - hr >=0) {
-            if (utc - hr == 8) {
-                timezone = "PST";
-            } else if utc -hr ==6) {
-                timezone = "CST";
-            } else if (utc -hr ==5) {
-                timezone = "EST";
-            } else {
-                timezone = "unknown"
-            } else {
-                if (utc + 24 - hr ==8) {
-                    timezone = "PST";
-                } else if (utc + 24 - hr ==6) {
-                    timezone = "CST";
-                } else if (utc +24 -hr ==5) {
-                    timezone = "EST";
-                } else {
-                    timezone = "unknown";
-                }
-            }
+        
         }
         //Assemble time format to display
-        var time = hr + ":" + min + ":" + sec + " " + ampm + " " + timezone;
+        var time = hr + ":" + min + ":" + sec + " " + ampm;
         //Display current local time and time zone on HTML elements
         document.getElementById("clock").innerText = time; //adding time
         //Run time data function every 1 second
