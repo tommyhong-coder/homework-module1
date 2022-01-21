@@ -79,6 +79,9 @@
             padding-bottom: lem;
             background-color: #ecfab8;
         }
+        footer #nondisclaimer p {
+            display:inline;
+        }
         footer #nondiclaimer .copy {
             padding: 3.5em 3.5em 3.5em 13em;
             float: left;
@@ -96,7 +99,7 @@
             font-size: 0.85em;
             text-align: center;
         }
-        footer #nondisclaimer .socal .fa {
+        footer #nondisclaimer .social .fa {
             padding: 15px;
             font-size: 15px;
             width: 15px;

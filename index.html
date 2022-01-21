@@ -28,6 +28,10 @@
             </nav>
         </div>
     </header>
+    <section id="timeofday">
+        <span>Your Currrent Local Time:</span>
+        <span id="clock"></span>
+    </section>
             <main>
                 <h2>Introducing California's Greatest Cliffs</h2>
                 <h3>What is so unique about California cliffs?</h3>
@@ -36,7 +40,7 @@
                 <p>Located within a 100 mile radius from Irvine, California, they can be reached by roads easily. The closest cliff to Irvine is West Cliff, which is the most popular and most visited.</p>
                 <section>
                     <ul id="partners">
-                        <li class="partner">
+                        <!-- <li class="partner">
                             <img src="images/partners/partner-bustour.png" alt="Partner Bus Tours">
                         </li>
                         <li class="partner">
@@ -53,25 +57,86 @@
                         </li>
                         <li class="partner">
                             <img src="images/partners/partner-tourgroup.png" alt="Partner Tour Group">
-                        </li>
+                        </li> -->
                     </ul>
                 </section>
             </main>
       
     </div>
-    <div id="nondisclaimer"></div>
-    <div class="copy">
-        <footer>&copy;Copyright 2020 :: GreatCliffs.com</footer>
-        
-    </div>
-    <div class="social".>
-        <a href="#" class="fa fa-facebook"></a>
-        <a href="#" class="fa fa-instagram"></a>
-        <a href="#" class="fa fa-twitter"></a>
-    </div>
-    <div id="disclaimer".>
-        <p>This website is designed and created solely for educational purposes only at Westcliff University. All contents are not intended for any commercial gain or use.</p>
-    </div>
+    <footer>
+        <div id="nondisclaimer">
+            <div class="copy">
+                <p>&copy;Copyright 2020 :: GreatCliffs.com</p>
+            </div>
+            <div class="social".>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-twitter"></a>
+            </div>
+        </div>
+        <div id="disclaimer".>
+            <p>This website is designed and created solely for educational purposes only at Westcliff University. All contents are not intended for any commercial gain or use.</p>
+        </div>
+    </footer>
+<!--JavaScript Codes-->
+<script>
+        //Create a time data function
+        function currentTime() {
+        //Declare variables
+        var d = new Date(); //Get current date
+        var hr = d.getHours(); //Get current hours
+        var min = d.getMinutes(); //Get current minutes
+        var sec = d.getSeconds(); //get current seconds
+        var ampm; //Declare empty variable to store AM or PM
+        //add 0 to single digits for seconds
+        if (sec < 10) {
+            sec = "0" + sec;
+        }
+        //Add 0 to single digits for minutes
+        if (min < 10) {
+            min = "0" + min;
+        }
+        //Determine AM or PM string
+        if (hr == 12) {
+            ampm = "PM"; //Set to PM
+        } Else if (hr > 12) {
+            hr -= 12; //Deduct 12 from hours greater than 12 (military time)
+            ampm = "PM"; //Set to PM
+        } else {
+            ampm = "AM"; //Set to AM
+        }
+        //Determine timezone
+        if (utc - hr >=0) {
+            if (utc - hr == 8) {
+                timezone = "PST";
+            } else if utc -hr ==6) {
+                timezone = "CST";
+            } else if (utc -hr ==5) {
+                timezone = "EST";
+            } else {
+                timezone = "unknown"
+            } else {
+                if (utc + 24 - hr ==8) {
+                    timezone = "PST";
+                } else if (utc + 24 - hr ==6) {
+                    timezone = "CST";
+                } else if (utc +24 -hr ==5) {
+                    timezone = "EST";
+                } else {
+                    timezone = "unknown";
+                }
+            }
+        }
+        //Assemble time format to display
+        var time = hr + ":" + min + ":" + sec + " " + ampm + " " + timezone;
+        //Display current local time and time zone on HTML elements
+        document.getElementById("clock").innerText = time; //adding time
+        //Run time data function every 1 second
+        setInterval(currentTime, 1000); //setting timer
+    }
+    //Initial run of time data function
+    currentTime();
+</script>
 
 </body>
 </html>
